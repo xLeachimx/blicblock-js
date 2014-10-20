@@ -87,7 +87,7 @@ angular.module('blicblockApp')
         $scope.new_high_score.value = high_score.value
 
     $scope.record_high_score = ->
-      return if $scope.game_info.test_mode
+      return if $scope.game_info.test_mode || $scope.use_ai
       on_success = (data) ->
         Notification.notice("You are ##{data.rank} out of " +
                             "#{data.total_scores} scores!")
